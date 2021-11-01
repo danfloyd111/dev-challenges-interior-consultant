@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 77px 1fr 1fr 77px;
+  grid-template-rows: min-content 1fr min-content;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header header header header"
+    ". page page ."
+    "footer footer footer footer";
+  background-color: #181719;
+}
+
+header {
+  grid-area: header;
+  color: #ffffff;
+  padding: 42px 77px 0 77px;
+  display: flex;
+}
+
+.title-container {
+  flex: 1 1;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.menu-entry {
+  padding-right: 86px;
+  cursor: pointer;
+}
+
+.menu-entry:last-child {
+  padding-right: 0;
+}
+
+.menu-entry p {
+  margin: 0;
+}
+
+.menu-entry.selected p {
+  font-weight: bold;
+  width: fit-content;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ffffff;
+}
+
+.title {
+  width: fit-content;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  text-transform: uppercase;
+  font-family: "Crimson Pro";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.page {
+  grid-area: page;
+  display: flex;
+  margin-top: 50px;
+}
+
+.page-description {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1;
+  padding-right: 87px;
+}
+
+.description-header {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 61px;
+  margin: 0;
+}
+
+.description-body {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 40px 0 48px 0;
+}
+
+.description-link {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.description-link .right-arrow {
+  margin-left: 14px;
+}
+
+.description-link:visited {
+  color: #ffffff;
+}
+
+.page-illustration {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.illustration-container {
+  position: relative;
+}
+
+.illustration {
+  max-width: 777px;
+  width: 100%;
+  height: auto;
+}
+
+.caption-box {
+  background: #181719;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px 14px 34px 14px;
+  min-width: 410px;
+  width: fit-content;
+  position: absolute;
+  right: 32px;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+.caption-header {
+  display: flex;
+}
+
+.name-and-job {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 19px;
+}
+
+.name {
+  margin: 0;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+.job {
+  margin: 8px 0 0 0;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #828282;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.caption-body {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  color: #ffffff;
+  margin-top: 30px;
+  max-width: 287px;
+}
+
+footer {
+  grid-area: footer;
+  color: #a9a9a9;
+  padding-bottom: 24px;
+  padding-top: 200px;
+  text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+footer a:visited {
+  color: #a9a9a9;
+}
