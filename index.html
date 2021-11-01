@@ -9,6 +9,8 @@
 
     <link rel="icon" href="img/devchallenges.png" />
 
+    <script src="utils.js"></script>
+
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,10 +19,22 @@
       href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@500;700&display=swap" 
       rel="stylesheet"
     > 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Interior consultant</title>
   </head>
   <body>
+    <div class="menu-overlay" onscroll="preventScrolling()">
+      <div class="menu-overlay-header">
+        <span class="material-icons md-24" onclick="expandMenu()">close</span>
+      </div>
+      <ul class="menu-overlay-body">
+        <li class="menu-overlay-entry selected"><p>Home</p></li>
+          <li class="menu-overlay-entry"><p>Collection</p></li>
+          <li class="menu-overlay-entry"><p>About</p></li>
+          <li class="menu-overlay-entry"><p>Contact</p></li>
+      </ul>
+    </div>
     <header>
       <div class="title-container">
         <p class="title">
@@ -28,12 +42,14 @@
         </p>
       </div>
       <nav>
+        <span class="material-icons md-24 hamburger" onclick="expandMenu()">menu</span>
         <ul class="menu">
           <li class="menu-entry selected"><p>Home</p></li>
           <li class="menu-entry"><p>Collection</p></li>
           <li class="menu-entry"><p>About</p></li>
           <li class="menu-entry"><p>Contact</p></li>
         </ul>
+        <img
       </nav>
     </header>
     <div class="page">

@@ -20,6 +20,10 @@ body {
   background-color: #181719;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 header {
   grid-area: header;
   color: #ffffff;
@@ -27,8 +31,16 @@ header {
   display: flex;
 }
 
+nav {
+  display: inline-flex;
+}
+
 .title-container {
   flex: 1 1;
+}
+
+.title {
+  margin: 0;
 }
 
 .menu {
@@ -39,10 +51,12 @@ header {
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
+  margin: 0;
 }
 
 .menu-entry {
   padding-right: 86px;
+  height: fit-content;
   cursor: pointer;
 }
 
@@ -76,7 +90,7 @@ header {
 .page {
   grid-area: page;
   display: flex;
-  margin-top: 50px;
+  margin-top: 171px;
 }
 
 .page-description {
@@ -216,4 +230,223 @@ footer {
 
 footer a:visited {
   color: #a9a9a9;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.material-icons.hamburger {
+  display: none;
+}
+
+.menu-overlay {
+  display: none;
+  background-color: #181719;
+  color: #ffffff;
+  position: fixed;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+}
+
+.menu-overlay.open {
+  display: block;
+  -webkit-animation: slide-in-right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.menu-overlay-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 10px;
+}
+
+.menu-overlay-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.menu-overlay-entry {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.menu-overlay-entry {
+  margin: 0 0 32px 0;
+}
+
+.menu-overlay-entry:last-child {
+  margin: 0;
+}
+
+.menu-overlay-entry p {
+  margin: 0;
+}
+
+.menu-overlay-entry.selected p {
+  font-weight: bold;
+  width: fit-content;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ffffff;
+  margin: 0 auto;
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+  header {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  body {
+    grid-template-columns: 48px 1fr 1fr 48px;
+  }
+
+  .page {
+    margin-top: 100px;
+  }
+
+  .description-header {
+    font-size: 40px;
+    line-height: 51px;
+  }
+
+  .description-body {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .description-link {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caption-box {
+    min-width: 0;
+  }
+
+  .caption-body {
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
+
+@media only screen and (max-width: 936px) {
+  header {
+    padding: 19px 12px 0 12px;
+  }
+
+  body {
+    grid-template-columns: 12px 1fr 1fr 12px;
+  }
+
+  .page {
+    margin-top: 38px;
+  }
+
+  .material-icons.hamburger {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav .menu {
+    display: none;
+  }
+
+  .page {
+    flex-direction: column;
+  }
+
+  .page-description {
+    margin-bottom: 37px;
+  }
+
+  .illustration {
+    max-width: unset;
+  }
+
+  .description-header {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .description-body {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 25px 0;
+  }
+
+  .description-link {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .caption-box {
+    right: 11px;
+  }
+
+  .name {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .name {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .avatar {
+    height: 36px;
+    width: 36px;
+  }
+
+  .caption-body {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  footer {
+    padding-top: 120px;
+  }
 }
